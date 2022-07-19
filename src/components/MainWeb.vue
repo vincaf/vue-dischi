@@ -2,112 +2,14 @@
     <main>
         <div class="container">
             <div class="cards-container d-flex align-content-stretch flex-wrap justify-content-between">
-                <div class="card">
-                    <img src="https://i.discogs.com/psDUUalbwHXuzNS7QgK93aG6ImE4JzALnOkCPtB1HVw/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNDY5/NTMtMTQ0ODkyNzA4/Ni02NTkwLmpwZWc.jpeg" class="card-img-top p-3" alt="">
-                    <div class="card-body text-center">
-                        <h5 class="text-white fw-bold">LIVE AT WEMBLEY 86</h5>
-                        <div class="card-text d-flex flex-column">
-                            <div>Queen</div>
-                            <div>1992</div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="card">
-                    <img src="https://i.discogs.com/psDUUalbwHXuzNS7QgK93aG6ImE4JzALnOkCPtB1HVw/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNDY5/NTMtMTQ0ODkyNzA4/Ni02NTkwLmpwZWc.jpeg" class="card-img-top p-3" alt="">
+                <div class="card" v-for="(album, index) in musicAlbum" :key="index">
+                    <img :src="album.poster" class="card-img-top p-3" :alt="album.title">
                     <div class="card-body text-center">
-                        <h5 class="text-white fw-bold">LIVE AT WEMBLEY 86</h5>
+                        <h5 class="text-white fw-bold"> {{album.title}} </h5>
                         <div class="card-text d-flex flex-column">
-                            <div>Queen</div>
-                            <div>1992</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="https://i.discogs.com/psDUUalbwHXuzNS7QgK93aG6ImE4JzALnOkCPtB1HVw/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNDY5/NTMtMTQ0ODkyNzA4/Ni02NTkwLmpwZWc.jpeg" class="card-img-top p-3" alt="">
-                    <div class="card-body text-center">
-                        <h5 class="text-white fw-bold">LIVE AT WEMBLEY 86</h5>
-                        <div class="card-text d-flex flex-column">
-                            <div>Queen</div>
-                            <div>1992</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="https://i.discogs.com/psDUUalbwHXuzNS7QgK93aG6ImE4JzALnOkCPtB1HVw/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNDY5/NTMtMTQ0ODkyNzA4/Ni02NTkwLmpwZWc.jpeg" class="card-img-top p-3" alt="">
-                    <div class="card-body text-center">
-                        <h5 class="text-white fw-bold">LIVE AT WEMBLEY 86</h5>
-                        <div class="card-text d-flex flex-column">
-                            <div>Queen</div>
-                            <div>1992</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="https://i.discogs.com/psDUUalbwHXuzNS7QgK93aG6ImE4JzALnOkCPtB1HVw/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNDY5/NTMtMTQ0ODkyNzA4/Ni02NTkwLmpwZWc.jpeg" class="card-img-top p-3" alt="">
-                    <div class="card-body text-center">
-                        <h5 class="text-white fw-bold">LIVE AT WEMBLEY 86</h5>
-                        <div class="card-text d-flex flex-column">
-                            <div>Queen</div>
-                            <div>1992</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="https://i.discogs.com/psDUUalbwHXuzNS7QgK93aG6ImE4JzALnOkCPtB1HVw/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNDY5/NTMtMTQ0ODkyNzA4/Ni02NTkwLmpwZWc.jpeg" class="card-img-top p-3" alt="">
-                    <div class="card-body text-center">
-                        <h5 class="text-white fw-bold">LIVE AT WEMBLEY 86</h5>
-                        <div class="card-text d-flex flex-column">
-                            <div>Queen</div>
-                            <div>1992</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="https://i.discogs.com/psDUUalbwHXuzNS7QgK93aG6ImE4JzALnOkCPtB1HVw/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNDY5/NTMtMTQ0ODkyNzA4/Ni02NTkwLmpwZWc.jpeg" class="card-img-top p-3" alt="">
-                    <div class="card-body text-center">
-                        <h5 class="text-white fw-bold">LIVE AT WEMBLEY 86</h5>
-                        <div class="card-text d-flex flex-column">
-                            <div>Queen</div>
-                            <div>1992</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="https://i.discogs.com/psDUUalbwHXuzNS7QgK93aG6ImE4JzALnOkCPtB1HVw/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNDY5/NTMtMTQ0ODkyNzA4/Ni02NTkwLmpwZWc.jpeg" class="card-img-top p-3" alt="">
-                    <div class="card-body text-center">
-                        <h5 class="text-white fw-bold">LIVE AT WEMBLEY 86</h5>
-                        <div class="card-text d-flex flex-column">
-                            <div>Queen</div>
-                            <div>1992</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="https://i.discogs.com/psDUUalbwHXuzNS7QgK93aG6ImE4JzALnOkCPtB1HVw/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNDY5/NTMtMTQ0ODkyNzA4/Ni02NTkwLmpwZWc.jpeg" class="card-img-top p-3" alt="">
-                    <div class="card-body text-center">
-                        <h5 class="text-white fw-bold">LIVE AT WEMBLEY 86</h5>
-                        <div class="card-text d-flex flex-column">
-                            <div>Queen</div>
-                            <div>1992</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="https://i.discogs.com/psDUUalbwHXuzNS7QgK93aG6ImE4JzALnOkCPtB1HVw/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNDY5/NTMtMTQ0ODkyNzA4/Ni02NTkwLmpwZWc.jpeg" class="card-img-top p-3" alt="">
-                    <div class="card-body text-center">
-                        <h5 class="text-white fw-bold">LIVE AT WEMBLEY 86</h5>
-                        <div class="card-text d-flex flex-column">
-                            <div>Queen</div>
-                            <div>1992</div>
+                            <div>{{album.author}}</div>
+                            <div>{{album.year}}</div>
                         </div>
                     </div>
                 </div>
@@ -118,7 +20,32 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
+    data: function(){
+        return{
+            musicAlbum: [],
+        }
+    },
+
+    methods:{
+        getMusicAlbum(){
+            axios.get('https://flynn.boolean.careers/exercises/api/array/music')
+            .then((result) => {
+                // console.log(result.data.response)
+                this.musicAlbum = result.data.response;
+                console.log(this.musicAlbum);
+            })
+            .catch((error) => {
+                console.warn(error);
+            })
+        }
+    },
+
+    created(){
+        this.getMusicAlbum();
+    }
 
 }
 </script>
