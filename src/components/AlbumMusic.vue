@@ -26,16 +26,16 @@ export default {
 
 <style lang="scss" scoped>
 .card{
-            width: 180px;
-            margin-bottom: 20px;
-            background-color: #2e3a46;
-            
-            .card-body{
-                padding: 0 10px 10px 10px;
-            }
-            .card-text{
-                color: #747a7c;
-                font-size: 14px;
-            }
+        width: 180px;
+        margin-bottom: 20px;
+        background-color: #2e3a46;
+        
+        .card-body{
+            padding: 0 10px 10px 10px;
         }
+        .card-text{
+            color: #747a7c;
+            font-size: 14px;
+        }
+    }
 </style>

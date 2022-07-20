@@ -3,7 +3,7 @@
         <div class="container">
             <div class="cards-container d-flex align-content-stretch flex-wrap justify-content-between">
 
-                <AlbumMusic v-for="(album, index) in musicAlbum" :key="index" 
+                <AlbumMusic v-for="(album, index) in musicAlbumList" :key="index" 
                 :imageUrl="album.poster"
                 :title="album.title"
                 :author="album.author"
@@ -28,7 +28,7 @@ export default {
 
     data: function(){
         return{
-            musicAlbum: [],
+            musicAlbumList: [],
         }
     },
 
@@ -37,8 +37,8 @@ export default {
             axios.get('https://flynn.boolean.careers/exercises/api/array/music')
             .then((result) => {
                 // console.log(result.data.response)
-                this.musicAlbum = result.data.response;
-                console.log(this.musicAlbum);
+                this.musicAlbumList = result.data.response;
+                console.log(this.musicAlbumList);
             })
             .catch((error) => {
                 console.warn(error);
