@@ -1,6 +1,10 @@
 <template>
     <main>
-        <div class="container">
+        <div v-if="isLoading">
+            <StartsLoader />
+        </div>
+
+        <div v-else class="container">
             <div class="cards-container d-flex align-content-stretch flex-wrap justify-content-between">
 
                 <AlbumMusic v-for="(album, index) in musicAlbumList" :key="index" 
@@ -18,17 +22,20 @@
 <script>
 import AlbumMusic from './AlbumMusic.vue';
 import axios from 'axios';
+import StartsLoader from './StartsLoader.vue';
 
 export default {
 
     name: 'MainWeb',
     components: {
-    AlbumMusic,
+        AlbumMusic,
+        StartsLoader,
     },
 
     data: function(){
         return{
             musicAlbumList: [],
+            isLoading: true,
         }
     },
 
@@ -39,6 +46,9 @@ export default {
                 // console.log(result.data.response)
                 this.musicAlbumList = result.data.response;
                 console.log(this.musicAlbumList);
+                setTimeout( () => {
+                    this.isLoading = false;
+                }, 1000);
             })
             .catch((error) => {
                 console.warn(error);
@@ -56,6 +66,7 @@ export default {
 <style lang="scss" scoped>
 main{
     background-color: #1e2d3b;
+    height: 108vh;
 
     .container{
         max-width: 1000px;
