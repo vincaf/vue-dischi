@@ -18,7 +18,7 @@ export default {
         'imageUrl': String,
         'title': String,
         'author': String,
-        'year': Number,
+        'year': String,
     }
 
 }

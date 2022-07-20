@@ -5,6 +5,10 @@
         </div>
 
         <div v-else class="container">
+            <div>
+                <SelectGenre />
+            </div>
+
             <div class="cards-container d-flex align-content-stretch flex-wrap justify-content-between">
 
                 <AlbumMusic v-for="(album, index) in musicAlbumList" :key="index" 
@@ -23,6 +27,7 @@
 import AlbumMusic from './AlbumMusic.vue';
 import axios from 'axios';
 import StartsLoader from './StartsLoader.vue';
+import SelectGenre from './SelectGenre.vue';
 
 export default {
 
@@ -30,6 +35,7 @@ export default {
     components: {
         AlbumMusic,
         StartsLoader,
+        SelectGenre,
     },
 
     data: function(){
@@ -66,13 +72,13 @@ export default {
 <style lang="scss" scoped>
 main{
     background-color: #1e2d3b;
-    height: 108vh;
+    height: 112vh;
 
     .container{
         max-width: 1000px;
 
         .cards-container{
-            padding: 50px 0;
+            padding: 30px 0;
         }
     }
 }
