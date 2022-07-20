@@ -3,16 +3,12 @@
         <div class="container">
             <div class="cards-container d-flex align-content-stretch flex-wrap justify-content-between">
 
-                <div class="card" v-for="(album, index) in musicAlbum" :key="index">
-                    <img :src="album.poster" class="card-img-top p-3" :alt="album.title">
-                    <div class="card-body text-center">
-                        <h5 class="text-white fw-bold"> {{album.title}} </h5>
-                        <div class="card-text d-flex flex-column">
-                            <div>{{album.author}}</div>
-                            <div>{{album.year}}</div>
-                        </div>
-                    </div>
-                </div>
+                <AlbumMusic v-for="(album, index) in musicAlbum" :key="index" 
+                :imageUrl="album.poster"
+                :title="album.title"
+                :author="album.author"
+                :year="album.year"
+                />
 
             </div>
         </div>
@@ -20,9 +16,16 @@
 </template>
 
 <script>
+import AlbumMusic from './AlbumMusic.vue';
 import axios from 'axios';
 
 export default {
+
+    name: 'MainWeb',
+    components: {
+    AlbumMusic,
+    },
+
     data: function(){
         return{
             musicAlbum: [],
@@ -59,20 +62,6 @@ main{
 
         .cards-container{
             padding: 50px 0;
-        }
-
-        .card{
-            width: 180px;
-            margin-bottom: 20px;
-            background-color: #2e3a46;
-            
-            .card-body{
-                padding: 0 10px 10px 10px;
-            }
-            .card-text{
-                color: #747a7c;
-                font-size: 14px;
-            }
         }
     }
 }
