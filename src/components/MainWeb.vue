@@ -6,12 +6,12 @@
 
         <div v-else class="container">
             <div>
-                <SelectGenre />
+                <SelectGenre :genres="genres" @selectedGenre="filterDiscs" />
             </div>
 
-            <div class="cards-container d-flex align-content-stretch flex-wrap justify-content-between">
+            <div class="cards-container d-flex align-content-stretch flex-wrap">
 
-                <AlbumMusic v-for="(album, index) in musicAlbumList" :key="index" 
+                <AlbumMusic v-for="(album, index) in filteredDiscs" :key="index" 
                 :imageUrl="album.poster"
                 :title="album.title"
                 :author="album.author"
@@ -41,6 +41,8 @@ export default {
     data: function(){
         return{
             musicAlbumList: [],
+            genres: [],
+            filteredDiscs: [],
             isLoading: true,
         }
     },
@@ -52,6 +54,8 @@ export default {
                 // console.log(result.data.response)
                 this.musicAlbumList = result.data.response;
                 console.log(this.musicAlbumList);
+                this.filteredDiscs = result.data.response;
+                this.genres = this.getUniqueGenres(this.musicAlbumList);
                 setTimeout( () => {
                     this.isLoading = false;
                 }, 1000);
@@ -59,7 +63,25 @@ export default {
             .catch((error) => {
                 console.warn(error);
             })
-        }
+        },
+
+        getUniqueGenres(musicAlbumList){
+            const genres = [];
+            musicAlbumList.forEach(AlbumMusic => {
+                if(!genres.includes(AlbumMusic.genre)){
+                    genres.push(AlbumMusic.genre);
+                }
+            });
+            return genres;
+        },
+
+        filterDiscs(genre){
+            if(genre == null || genre === ""){
+                this.filteredDiscs = this.musicAlbumList;
+            } else{
+                this.filteredDiscs = this.musicAlbumList.filter( element => element.genre.toLowerCase() === genre );
+            }
+        },
     },
 
     created(){
